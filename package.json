@@ -26,5 +26,9 @@
     "commander": "^6.2.0",
     "playwright": "^1.6.1",
     "listr": "^0.14.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:coffeestainio/margara.git"
   }
 }
