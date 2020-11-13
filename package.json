@@ -1,5 +1,5 @@
 {
-  "name": "margara",
+  "name": "@coffeestain/margara",
   "version": "0.0.1",
   "description": "Visual Validation CLI Tool",
   "main": "margara.js",
