@@ -1,10 +1,10 @@
 {
   "name": "@coffeestain/margara",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Visual Validation CLI Tool",
   "main": "margara.js",
   "bin": {
-    "margara": "margara.js"
+    "margara": "./margara.js"
   },
   "scripts": {
     "test": "jest",
@@ -18,13 +18,13 @@
   "author": "Pablo and Gabriel Calvo",
   "license": "ISC",
   "devDependencies": {
-    "colors": "^1.4.0",
-    "commander": "^6.2.0",
-    "eslint": "^7.13.0",
     "jest": "^26.6.3",
-    "playwright": "^1.6.1"
+    "eslint": "^7.13.0"
   },
   "dependencies": {
+    "colors": "^1.4.0",
+    "commander": "^6.2.0",
+    "playwright": "^1.6.1",
     "listr": "^0.14.3"
   }
 }
