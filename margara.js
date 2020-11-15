@@ -3,6 +3,7 @@ const packageJSON = require('./package.json');
 var program = require('commander');
 
 const screenshot = require('./lib/commands/screenshot');
+const compare = require('./lib/commands/compare');
 
 program
   .version(packageJSON.version, '-V, --version')
@@ -20,6 +21,15 @@ program
   .requiredOption('-u, --url [url]', 'e.g. https://domain.com')
   .option('-b, --browsers [browsers...]', 'e.g. chromium geckodriver webkit (Defaulted to "chromium" if not specified)')
   .action(screenshot);
+
+program
+  .command('compare')
+  .alias('c')
+  .description('Compare Web Pages')
+  .option('-b, --base [baseUrl]', 'e.g. https://domain.com')
+  .requiredOption('-t, --target [targetUrl]', 'e.g. https://target.com')
+  .option('-b, --browsers [browsers...]', 'e.g. chromium geckodriver webkit (Defaulted to "chromium" if not specified)')
+  .action(compare);
 
 
 program
