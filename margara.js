@@ -26,8 +26,8 @@ program
   .command('compare')
   .alias('c')
   .description('Compare Web Pages')
-  .option('-b, --base [baseUrl]', 'e.g. https://domain.com')
-  .requiredOption('-t, --target [targetUrl]', 'e.g. https://target.com')
+  .requiredOption('-t, --targetUrl [targetUrl]', 'e.g. https://target.com')
+  .option('-B, --baseUrl [baseUrl]', 'e.g. https://domain.com')
   .option('-b, --browsers [browsers...]', 'e.g. chromium geckodriver webkit (Defaulted to "chromium" if not specified)')
   .action(compare);
 
