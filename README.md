@@ -1,12 +1,22 @@
 # margara
-Visual Validation CLI Tool
+
+Visual Validation CLI Tool for Manual Testers
 
 ## Description
-Margara helps engineers to quickly capture and validate the visual state of a webapp by comparing screenshots against different environments and browsers.
 
-(It uses playwright under the hood)
+Margara helps engineers quickly capture and validate the visual state of a webapp by comparing screenshots against different environments and browsers.
 
-# Getting Started
+### Pre-requisites
+
+Margara _uses playwright under the hood_ which means that you will require several tools to make it work:
+
+* NodeJs v12.19.0 or up
+* In order to capture screenshots for specific browsers you have to have them installed:
+  * Chrome _chromium_
+  * Firefox _firefox_
+  * Safari _webkit_
+
+## Getting Started
 
 ## Installation
 
