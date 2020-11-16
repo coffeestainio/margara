@@ -1,15 +1,13 @@
-# margara
+# Margara
 
 <div align="center">
 <p>
     Visual Validation CLI Tool for Manual Testers
 </p>
 <p> 
-![Test](https://github.com/coffeestainio/margara/workflows/Node.js%20Package/badge.svg?event=pull_request)
+![Test](https://github.com/coffeestainio/margara/workflows/Test/badge.svg)
 </p>
-
-
-
+</div>
 
 ## Description
 
