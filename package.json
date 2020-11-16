@@ -1,6 +1,6 @@
 {
   "name": "@coffeestain/margara",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Visual Validation CLI Tool",
   "main": "margara.js",
   "bin": {
