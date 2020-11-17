@@ -19,7 +19,7 @@ program
   .alias('s')
   .description('Take screenshot')
   .requiredOption('-u, --url [url]', 'e.g. https://domain.com')
-  .option('-b, --browsers [browsers...]', 'e.g. chromium geckodriver webkit (Defaulted to "chromium" if not specified)')
+  .option('-b, --browsers [browsers...]', 'e.g. chromium geckodriver webkit (Default to "chromium" if not specified)')
   .action(screenshot);
 
 program
@@ -28,7 +28,8 @@ program
   .description('Compare Web Pages')
   .requiredOption('-t, --targetUrl [targetUrl]', 'e.g. https://target.com')
   .option('-B, --baseUrl [baseUrl]', 'e.g. https://domain.com')
-  .option('-b, --browsers [browsers...]', 'e.g. chromium geckodriver webkit (Defaulted to "chromium" if not specified)')
+  .option('-b, --browsers [browsers...]', 'e.g. chromium geckodriver webkit (Default to "chromium" if not specified)')
+  .option('-n, --testName [testName]', 'e.g. home-page')
   .action(compare);
 
 
