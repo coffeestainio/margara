@@ -1,17 +1,13 @@
-const colors = require('colors');
-const fs = require('fs');
-
-const doesBaselineExist = require('../../lib/utils/fs-utils');
+const doesBaselineExist = require('../../lib/utils/file-system');
 
 describe('baseline-existance', () => {
-  test('validate-exist', async () => {
+  test('validate-not-existance', async () => {
     expect(await doesBaselineExist('test/file/does/not/exist')).toBe(false);
 
   });
 
-  test('validate-exist', async () => {
+  test('validate-existance', async () => {
     expect(await doesBaselineExist('test/fixtures/file.txt')).toBe(true);
     
   });
-
-})
+});
