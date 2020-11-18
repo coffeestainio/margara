@@ -1,19 +1,14 @@
 const colors = require('colors');
 
+const { mockTaskWithError, mockTaskCollectScreenshots } = require('../mocks/jest-mocks');
 
+let taskCollectScreenshot = {};
 jest.mock('../../lib/tasks/collect-screenshots', () => taskCollectScreenshot = jest.fn());
 
 const screenshot = require('../../lib/commands/screenshot');
 
 // create mocked function 
-taskCollectScreenshot.mockImplementation((options) => {  
-  return {
-    title: `Mock step`,
-    task: () => {
-        console.log(`Step executed with: ${options.browserType}`)
-    }
-  }
-});
+taskCollectScreenshot.mockImplementation(mockTaskCollectScreenshots);
 
 describe('screenshots-command', () => {
 
@@ -23,7 +18,7 @@ describe('screenshots-command', () => {
 
     const options = {
       url:'https://www.google.com'
-    }
+    };
     
     await screenshot(options);
     
@@ -38,7 +33,7 @@ describe('screenshots-command', () => {
     const options = {
       url:'https://www.google.com',
       browsers: ['firefox','chromium']
-    }
+    };
     
     await screenshot(options);
     
@@ -47,36 +42,29 @@ describe('screenshots-command', () => {
 
   });
 
-  test('test browser provided use provided values', async() => {
+  test('test verify wrong url returns the function', async() => {
 
     const consoleSpy3 = jest.spyOn(console, 'log');
     
     const options = {
       url:'asda.com',
-    }
+    };
     
     await screenshot(options);
     
-    expect(consoleSpy3).toHaveBeenCalledTimes(1)
+    expect(consoleSpy3).toHaveBeenCalledTimes(1);
 
   });
 
   test('test when task returns error', async() => {
 
-    taskCollectScreenshot.mockImplementation((options) => {  
-      return {
-        title: `Mock Error Step`,
-        task: () => {
-            throw new Error('error')
-        }
-      }
-    });
+    taskCollectScreenshot.mockImplementation(mockTaskWithError);
 
     const consoleSpy5 = jest.spyOn(console, 'log');
     
     const options = {
       url:'https://www.google.com',
-    }
+    };
     
     await screenshot(options);
     
