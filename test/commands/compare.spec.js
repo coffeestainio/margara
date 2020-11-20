@@ -54,6 +54,7 @@ describe('screenshots-command', () => {
   test('test when task returns error', async() => {
 
     taskCollectScreenshot.mockImplementation(mockTaskWithError);
+  
 
     const consoleSpy5 = jest.spyOn(console, 'log');
     
@@ -85,7 +86,9 @@ describe('screenshots-command', () => {
 
   });
 
-  test('validation set context failure to trye', async() => {
+  test('validation set context failure to try', async() => {
+
+    doesBaselineExist.mockImplementation(()=> new Promise ( res => { res(true); }));
 
     taskCollectScreenshot.mockImplementation(mockTaskWithContext);
 

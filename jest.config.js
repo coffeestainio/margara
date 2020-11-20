@@ -3,15 +3,16 @@ module.exports = {
   testMatch: ["**.spec.js"],
   coverageThreshold: {
     global: {
-      branches: 85,
-      functions: 85,
-      lines: 92,
-      statements: -15
+      branches: 90,
+      functions: 95,
+      lines: 95,
+      statements: -5
     }
   },
   collectCoverageFrom: [
     "lib/**/*.{js,jsx}",
     "!**/node_modules/**",
-    "!**/vendor/**"
+    "!**/vendor/**",
+    "!**/visual-compare.js" //excluding this one because of call back issues
   ]
 };
