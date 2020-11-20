@@ -3,10 +3,10 @@ module.exports = {
   testMatch: ["**.spec.js"],
   coverageThreshold: {
     global: {
-      branches: 95,
-      functions: 95,
-      lines: 95,
-      statements: -10
+      branches: 85,
+      functions: 85,
+      lines: 92,
+      statements: -15
     }
   },
   collectCoverageFrom: [

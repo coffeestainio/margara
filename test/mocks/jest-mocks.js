@@ -35,6 +35,16 @@ const mockTaskWithError = () => {
   };
 };
 
+const mockTaskWithContext = () => {
+  return {
+    title: 'Mock Context Step',
+    task: (ctx) => {
+      ctx.failed = true;
+    }
+  };
+};
+
+
 const mockTaskCollectScreenshots = (options) => {
   return {
     title: 'Mock step',
@@ -48,5 +58,6 @@ module.exports = {
   mockedPlaywight,
   mockedPlaywightWithError,
   mockTaskCollectScreenshots,
-  mockTaskWithError
+  mockTaskWithError,
+  mockTaskWithContext
 };
