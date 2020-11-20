@@ -46,7 +46,7 @@ describe('screenshots-command', () => {
     };
     
     await compare(options); 
-    expect(consoleSpy).toHaveBeenNthCalledWith(1, `${colors.green(`Started 'www.google.com' execution`)} ${colors.gray(' ...\n')}`);
+    expect(consoleSpy).toHaveBeenNthCalledWith(1, `${colors.green('Started \'www.google.com\' execution')} ${colors.gray(' ...\n')}`);
     expect(consoleSpy).toHaveBeenNthCalledWith(6, 'Step executed with: chromium');
 
   });
@@ -70,8 +70,8 @@ describe('screenshots-command', () => {
 
   test('test when baseline does not exist', async() => {
 
-    doesBaselineExist.mockImplementation(()=> new Promise ( res => {res(false)}));
-    promptUserToCreateBaseline.mockImplementation(()=> new Promise ( res => {res(true)}));
+    doesBaselineExist.mockImplementation(()=> new Promise ( res => { res(false); }));
+    promptUserToCreateBaseline.mockImplementation(()=> new Promise ( res => {res(true);}));
 
     const consoleSpy = jest.spyOn(console, 'log');
     
@@ -81,7 +81,7 @@ describe('screenshots-command', () => {
     
     await compare(options);
     
-    expect(consoleSpy).toHaveBeenNthCalledWith(1, `${colors.green(`Started 'www.google.com' execution`)} ${colors.gray(' ...\n')}`);
+    expect(consoleSpy).toHaveBeenNthCalledWith(1, `${colors.green('Started \'www.google.com\' execution')} ${colors.gray(' ...\n')}`);
 
   });
 

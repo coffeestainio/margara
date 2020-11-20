@@ -1,10 +1,6 @@
-jest.mock('shelljs');
 jest.mock('looks-same');
 
-
-const shell = require('shelljs');
 const looksSame = require('looks-same');
-const colors = require('colors');
 
 jest.spyOn(looksSame, 'createDiff').mockResolvedValue(jest.fn());
 
@@ -13,8 +9,6 @@ const taskVisualCompare = require('../../lib/tasks/visual-compare');
 describe('visual-compare-task', () => {
 
   test('verify task title', async() => {
-
-    const image = '/test/fixtures/image.png';
 
     const compareSettings = {
       browserType: 'webkit',
