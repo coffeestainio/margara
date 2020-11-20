@@ -7,23 +7,12 @@ jest.mock('../../lib/tasks/collect-screenshots', () => taskCollectScreenshot = j
 
 const screenshot = require('../../lib/commands/screenshot');
 
-// create mocked function 
-taskCollectScreenshot.mockImplementation(mockTaskCollectScreenshots);
 
 describe('screenshots-command', () => {
 
-  test('test no browser provided defaults to chrome', async() => {
-
-    const consoleSpy0 = jest.spyOn(console, 'log');
-
-    const options = {
-      url:'https://www.google.com'
-    };
-    
-    await screenshot(options);
-    
-    expect(consoleSpy0).toHaveBeenNthCalledWith(2, 'Step executed with: chromium');
-
+  beforeEach(()=> {
+    // create mocked function 
+    taskCollectScreenshot.mockImplementation(mockTaskCollectScreenshots);
   });
 
   test('test browser provided use provided values', async() => {
@@ -39,6 +28,20 @@ describe('screenshots-command', () => {
     
     expect(consoleSpy1).toHaveBeenNthCalledWith(2, 'Step executed with: firefox');
     expect(consoleSpy1).toHaveBeenNthCalledWith(3, 'Step executed with: chromium');
+
+  });
+
+  test('test no browser provided defaults to chrome', async() => {
+
+    const consoleSpy0 = jest.spyOn(console, 'log');
+
+    const options = {
+      url:'https://www.google.com'
+    };
+    
+    await screenshot(options);
+    
+    expect(consoleSpy0).toHaveBeenNthCalledWith(2, 'Step executed with: chromium');
 
   });
 
@@ -68,12 +71,15 @@ describe('screenshots-command', () => {
     
     await screenshot(options);
     
-    expect(consoleSpy5).toHaveBeenNthCalledWith(2, colors.bgWhite(colors.red('error')),' Something went wrong. Please check the specified parameters.');
+    expect(consoleSpy5).toHaveBeenNthCalledWith(3, colors.bgWhite(colors.red('error')),' Something went wrong. Please check the specified parameters.');
 
   });
 
   afterEach(() => {    
-    jest.restoreAllMocks();
+    jest.resetAllMocks();
   });
 
+  afterAll(()=> {
+    jest.restoreAllMocks();
+  });
 });

@@ -44,45 +44,6 @@ describe('visual-compare-task', () => {
   
   });
 
-  test('images are  different', async() => {
-
-    shell.mkdir = jest.fn();
-    const consoleSpy = jest.spyOn(console, 'log');
-    const image = 'test/fixtures/image.png';
-    const imageDiff = 'test/fixtures/image-diff.png';
-    const screenShotDiffFile = 'test/fixtures/image-diff-result.png';
-
-    const compareSettings = {
-      browserType: 'webkit',
-      screenShotBaseFile: image,
-      screenShotTargetFile: imageDiff,
-      screenShotDiffFile: screenShotDiffFile
-    };
-    
-    const task = taskVisualCompare(compareSettings);
-    await task.task()
-
-    expect(consoleSpy).toHaveBeenCalledTimes(0);
-  
-  });
-
-  test('throw error on failure', async() => {
-
-    const compareSettings = {
-      browserType: 'webkit',
-      screenShotBaseFile: 'img/does/not.png',
-    };
-    
-    const task = taskVisualCompare(compareSettings);
-    try{
-      await task.task()
-    }
-    catch(ex){
-      expect(ex).toBe(true)
-    }
-  
-  });
-
   afterEach(() => {    
     jest.resetAllMocks();
   });
