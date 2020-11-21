@@ -26,8 +26,8 @@ describe('screenshots-command', () => {
     
     await screenshot(options);
     
-    expect(consoleSpy1).toHaveBeenNthCalledWith(2, 'Step executed with: firefox');
-    expect(consoleSpy1).toHaveBeenNthCalledWith(3, 'Step executed with: chromium');
+    expect(consoleSpy1).toHaveBeenNthCalledWith(5, 'Step executed with: firefox');
+    expect(consoleSpy1).toHaveBeenNthCalledWith(6, 'Step executed with: chromium');
 
   });
 
@@ -41,7 +41,7 @@ describe('screenshots-command', () => {
     
     await screenshot(options);
     
-    expect(consoleSpy0).toHaveBeenNthCalledWith(2, 'Step executed with: chromium');
+    expect(consoleSpy0).toHaveBeenNthCalledWith(4, 'Step executed with: chromium');
 
   });
 
@@ -71,7 +71,7 @@ describe('screenshots-command', () => {
     
     await screenshot(options);
     
-    expect(consoleSpy5).toHaveBeenNthCalledWith(3, colors.bgWhite(colors.red('error')),' Something went wrong. Please check the specified parameters.');
+    expect(consoleSpy5).toHaveBeenNthCalledWith(9, colors.bgWhite(colors.red('error')),' Something went wrong. Please check the specified parameters.');
 
   });
 

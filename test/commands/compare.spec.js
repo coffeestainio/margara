@@ -47,7 +47,7 @@ describe('screenshots-command', () => {
     
     await compare(options); 
     expect(consoleSpy).toHaveBeenNthCalledWith(1, `${colors.green('Started \'www.google.com\' execution')} ${colors.gray(' ...\n')}`);
-    expect(consoleSpy).toHaveBeenNthCalledWith(6, 'Step executed with: chromium');
+    expect(consoleSpy).toHaveBeenNthCalledWith(13, 'Step executed with: chromium');
 
   });
 
@@ -65,7 +65,7 @@ describe('screenshots-command', () => {
     
     await compare(options);
     
-    expect(consoleSpy5).toHaveBeenNthCalledWith(7, colors.bgWhite(colors.red('error')),' Something went wrong. Please check the specified parameters.');
+    expect(consoleSpy5).toHaveBeenNthCalledWith(16, colors.bgWhite(colors.red('error')),' Something went wrong. Please check the specified parameters.');
 
   });
 
@@ -100,7 +100,7 @@ describe('screenshots-command', () => {
     
     await compare(options);
     
-    expect(consoleSpy).toHaveBeenNthCalledWith(8, `\nImages stored in: ${colors.green('img-results/compare')} \n🎉 ${colors.gray('Process completed succesfully')} 🎉`);
+    expect(consoleSpy).toHaveBeenNthCalledWith(16, `\nImages stored in: ${colors.green('img-results/compare')} \n🎉 ${colors.gray('Process completed succesfully')} 🎉`);
 
   });
 
