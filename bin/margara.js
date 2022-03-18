@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-const packageJSON = require('./package.json');
+const packageJSON = require('../package.json');
 var program = require('commander');
 
-const screenshot = require('./lib/commands/screenshot');
-const compare = require('./lib/commands/compare');
+const screenshot = require('../lib/commands/screenshot');
+const compare = require('../lib/commands/compare');
 
 program
   .version(packageJSON.version, '-V, --version')

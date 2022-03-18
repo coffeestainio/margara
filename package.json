@@ -4,7 +4,7 @@
   "description": "Visual Validation CLI Tool",
   "main": "margara.js",
   "bin": {
-    "margara": "./margara.js"
+    "margara": "bin/margara"
   },
   "scripts": {
     "test": "jest --coverage=true",
